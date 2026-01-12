@@ -1,2 +1,5 @@
 # Colour-Based-Object-Tracking
-A colour based object tracking mechanism which uses HSV colour model and contour detection to track the object and trace it accordingly.
+This project implements a real-time colour-based object tracking system using Python and OpenCV.  
+The system detects and tracks an object of a specific colour from a live webcam feed using the HSV colour space.
+
+It works by first converting the webcam input from BGR to HSV and then inverting the image to make it look like a reflection. The a mask is applied over the HSV image to detect the desired colour whose values are given in HSV and obtained from the trackbars. On applying the mask (here the mask used is named pink_mask) we show another window showing only the desired coloured which what the computer visions after applying the mask. (Window named Only Pink). Then reduce the noise of the input to give a better output. Then using contour detection we detect the contours and select the largest contour area and place a track box aroudn it. Then the object's trajectory is tracked and outlined and the outlined image is added onto the input webcam window running to show the colour detection.
